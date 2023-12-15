@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43BEA618-32C9-4F70-B1EF-EA40947D9370}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PromGruz</RootNamespace>
+    <AssemblyName>PromGruz</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.0.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.0.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.3\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharpCore, Version=1.3.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfSharpCore.1.3.62\lib\netstandard2.0\PdfSharpCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.1.0.4\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthenticationForm.Designer.cs">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorForm.Designer.cs">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverAuthentication.cs" />
+    <Compile Include="DriverAuthenticationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverAuthenticationForm.Designer.cs">
+      <DependentUpon>DriverAuthenticationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverForm.Designer.cs">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstactionZapolnenieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstactionZapolnenieForm.Designer.cs">
+      <DependentUpon>InstactionZapolnenieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstractionAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstractionAdminForm.Designer.cs">
+      <DependentUpon>InstractionAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstractionExcelMarshrutiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstractionExcelMarshrutiForm.Designer.cs">
+      <DependentUpon>InstractionExcelMarshrutiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstractionExcelTransportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstractionExcelTransportForm.Designer.cs">
+      <DependentUpon>InstractionExcelTransportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstractionOtchetiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstractionOtchetiForm.Designer.cs">
+      <DependentUpon>InstractionOtchetiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstractionPoiskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstractionPoiskForm.Designer.cs">
+      <DependentUpon>InstractionPoiskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Otchet.cs" />
+    <Compile Include="Sort.cs" />
+    <Compile Include="StorekeeperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorekeeperForm.Designer.cs">
+      <DependentUpon>StorekeeperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransportManagerForm.Designer.cs">
+      <DependentUpon>TransportManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogisticianForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogisticianForm.Designer.cs">
+      <DependentUpon>LogisticianForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="UserAuthentication.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ГрузоперевозкиDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ГрузоперевозкиDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ГрузоперевозкиDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ГрузоперевозкиDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthenticationForm.resx">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorForm.resx">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverAuthenticationForm.resx">
+      <DependentUpon>DriverAuthenticationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverForm.resx">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstactionZapolnenieForm.resx">
+      <DependentUpon>InstactionZapolnenieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstractionAdminForm.resx">
+      <DependentUpon>InstractionAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstractionExcelMarshrutiForm.resx">
+      <DependentUpon>InstractionExcelMarshrutiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstractionExcelTransportForm.resx">
+      <DependentUpon>InstractionExcelTransportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstractionOtchetiForm.resx">
+      <DependentUpon>InstractionOtchetiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstractionPoiskForm.resx">
+      <DependentUpon>InstractionPoiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogisticianForm.resx">
+      <DependentUpon>LogisticianForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="StorekeeperForm.resx">
+      <DependentUpon>StorekeeperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportManagerForm.resx">
+      <DependentUpon>TransportManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ГрузоперевозкиDataSet.xsc">
+      <DependentUpon>ГрузоперевозкиDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ГрузоперевозкиDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ГрузоперевозкиDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ГрузоперевозкиDataSet.xss">
+      <DependentUpon>ГрузоперевозкиDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ГрузоперевозкиDataSet1.xsc">
+      <DependentUpon>ГрузоперевозкиDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ГрузоперевозкиDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ГрузоперевозкиDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ГрузоперевозкиDataSet1.xss">
+      <DependentUpon>ГрузоперевозкиDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aadas.jpg" />
+    <Content Include="Resources\ada.jpg" />
+    <None Include="Resources\ADadsa.png" />
+    <Content Include="Resources\admin.png" />
+    <None Include="Resources\adsdasdadsasd.jpg" />
+    <Content Include="Resources\Container-Truck-PNG-Background-Image.png" />
+    <Content Include="Resources\Container-Truck-PNG-Pic.png" />
+    <Content Include="Resources\dada.png" />
+    <Content Include="Resources\dasd.jpg" />
+    <Content Include="Resources\doccc.png" />
+    <None Include="Resources\ExcelTransport.jpg" />
+    <None Include="Resources\ExcelMarshrutijpg.jpg" />
+    <Content Include="Resources\fas.jpg" />
+    <Content Include="Resources\fonAunt1.jpg" />
+    <Content Include="Resources\free-icon-padlock-unlock-25215.png" />
+    <Content Include="Resources\free-icon-user-image-with-black-background-17004.png" />
+    <Content Include="Resources\infoicon.png" />
+    <Content Include="Resources\logistfon.jpg" />
+    <Content Include="Resources\lolo.jpg" />
+    <Content Include="Resources\otchetsaicon.png" />
+    <None Include="Resources\Polop.jpg" />
+    <Content Include="Resources\profile.png" />
+    <None Include="Resources\SortSEARCH.png" />
+    <Content Include="Resources\soso.jpg" />
+    <None Include="Resources\SozdanieOtcheta.gif" />
+    <Content Include="Resources\unlock.png" />
+    <Content Include="Resources\user.png" />
+    <None Include="Resources\dsa.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
